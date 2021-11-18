@@ -1,10 +1,11 @@
 import socket
 import json
 import time
+import threading
 """
 CODE BY:
 JACOBO OROZCO ARDILA
-NICOLAS ANDREI OROZCO
+NICOLAS ANDREY OROZCO
 """
 
 host = 'localhost'
@@ -1310,8 +1311,6 @@ def create_Group(machine_id, information, client_addr, detail):
                     WILL HAVE TO DO ON A JSON
                     """
                     group_data = json.dumps({"matrix": matrix_of_groups})
-
-
                     data_Set = {"groups": matrix_of_groups}
                     data = json.dumps(data_Set)
                     print("About to show what is in data")
@@ -1616,7 +1615,7 @@ def group_Manipulation(machine_id, information, client_addr, detail):
             EDITORS NOTE: NONE EXISTENT
             THIS IS THE NEXTO ORDER OF BUSSINESS
             """
-            create_Group(machine_id, information, client_addr, detail)
+            show_Groups(machine_id, information, client_addr, detail)
         if(information == '6'):
             """
             THE CLIENT HAS CHOSEN TO SEND MESSAGE TO A GROUP
@@ -1709,6 +1708,7 @@ def main():
     When a group does not exist the group id is replaced with (empty)
     When the group has spots available, those spots are filled with (nm) representing NO MEMBER
     """
+
     main_Control()
 
 if __name__ == "__main__":

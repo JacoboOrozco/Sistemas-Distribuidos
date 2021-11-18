@@ -4,16 +4,16 @@ import time
 """
 CODE BY:
 JACOBO OROZCO ARDILA
-NICOLAS ANDREI OROZCO
+NICOLAS ANDREY OROZCO
 """
 
 client_socket = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
 print("Client socket created")
 
 host = 'localhost'
-port = 5433
+port = 5434
 
-machine_id = 'm1'
+machine_id = 'm2'
 server_addr = 0
 
 """
